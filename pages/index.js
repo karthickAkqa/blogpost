@@ -65,7 +65,7 @@ const Article = ({ article }) => {
         <Heading as="h2">
           <PrismicLink document={article}>
             <PrismicText field={article.data.title} />
-          </PrismicLink>
+          </PrismicLink> 
         </Heading>
         <p className="font-serif italic tracking-tighter text-slate-500">
           {dateFormatter.format(date)}
