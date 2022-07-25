@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Search } from "./Search"
+import { AlgoliaSearch } from "./Search";
 
 export const Layout = ({
   navigation,
@@ -18,7 +18,7 @@ export const Layout = ({
         navigation={navigation}
         settings={settings}
       />
-      <Search/> 
+      <AlgoliaSearch/> 
       <main>{children}</main>
       <Footer withSignUpForm={withSignUpForm} settings={settings} />
     </div>
