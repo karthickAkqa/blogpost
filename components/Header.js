@@ -98,7 +98,7 @@ export const Header = ({
             <div className="m-5"> 
             <span className="px-1.5">Light</span>  
               <div className="inline-block w-10">
-                <span data-toggle-theme="dark" data-act-class="pl-4" className="border rounded-full border-neutral-600 flex items-center cursor-pointer w-10 transition-all duration-300 ease-in-out" >
+                <span data-toggle-theme="dark" data-act-class="pl-4" className="border rounded-full border-neutral-600 flex items-center cursor-pointer w-10 transition-all duration-300 ease-in-out pl-0" >
                   <span className="rounded-full w-3 h-3 m-1 bg-neutral-700"> 
                   </span>
                 </span>
