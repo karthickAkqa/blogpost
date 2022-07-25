@@ -8,6 +8,7 @@ import { Layout } from "../components/Layout";
 import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
 
+
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
@@ -49,17 +50,17 @@ const Article = ({ article }) => {
 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicLink document={article} tabIndex="-1">
-        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
-          {prismicH.isFilled.image(featuredImage) && (
-            <PrismicNextImage
-              field={featuredImage}
-              layout="fill"
-              className="object-cover"
-            />
-          )}
-        </div>
-      </PrismicLink>
+      <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
+        <PrismicLink document={article} tabIndex="-1">
+            {prismicH.isFilled.image(featuredImage) && (
+              <PrismicNextImage
+                field={featuredImage}
+                layout="fill"
+                className="object-cover"
+              />
+            )}
+        </PrismicLink>
+      </div>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
           <PrismicLink document={article}>
@@ -79,6 +80,7 @@ const Article = ({ article }) => {
   );
 };
 
+
 const Index = ({ articles, navigation, settings }) => {
   return (
     <Layout
@@ -89,6 +91,7 @@ const Index = ({ articles, navigation, settings }) => {
       <Head>
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
+
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
           {articles.map((article) => (

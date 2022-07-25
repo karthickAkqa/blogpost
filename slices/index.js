@@ -3,12 +3,14 @@
 import ContactForm from './ContactForm';
 import Image from './Image';
 import Quote from './Quote';
+import SearchBox from './SearchBox';
 import Text from './Text';
 
 export {
 	ContactForm,
 	Image,
 	Quote,
+	SearchBox,
 	Text,
 };
 
@@ -16,5 +18,6 @@ export const components = {
 	contact_form: ContactForm,
 	image: Image,
 	quote: Quote,
+	search_box: SearchBox,
 	text: Text,
 };

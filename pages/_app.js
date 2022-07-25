@@ -62,6 +62,7 @@ const richTextComponents = {
   ),
 };
 
+
 export default function App({ Component, pageProps }) {
   return (
     <PrismicProvider
@@ -76,3 +77,4 @@ export default function App({ Component, pageProps }) {
     </PrismicProvider>
   );
 }
+ 

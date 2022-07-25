@@ -5,6 +5,8 @@ import { PrismicNextImage } from "@prismicio/next";
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
+import {useEffect} from "react"
+import {themeChange} from "theme-change";
 
 const Profile = ({ name, description, profilePicture }) => {
   return (
@@ -32,7 +34,7 @@ const Profile = ({ name, description, profilePicture }) => {
               </Heading>
             )}
             {prismicH.isFilled.richText(description) && (
-              <p className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500">
+              <p className="font-serif text-2xl italic leading-normal tracking-tight primary-content">
                 <PrismicText field={description} />
               </p>
             )}
@@ -45,7 +47,7 @@ const Profile = ({ name, description, profilePicture }) => {
 
 const NavItem = ({ children }) => {
   return (
-    <li className="font-semibold tracking-tight text-slate-800">{children}</li>
+    <li className="font-semibold tracking-tight primary-content flex items-center">{children}</li>
   );
 };
 
@@ -55,6 +57,18 @@ export const Header = ({
   navigation,
   settings,
 }) => {
+
+  const themeValues = [
+    "Light",
+    "Dark",
+  ]
+  
+  
+  useEffect(()=> {
+    themeChange(false)
+  });
+
+
   return (
     <Bounded as="header">
       <div className="grid grid-cols-1 justify-items-center gap-20">
@@ -72,8 +86,24 @@ export const Header = ({
                 </PrismicLink>
               </NavItem>
             ))}
+            {/* <select className="select select-bordered" data-choose-theme>
+              <option value="" >Default</option>
+              {themeValues.map((value) => (
+                <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+              ))}
+            </select> */}
+
+            <div className="m-5">  
+              <div className="inline-block w-10">
+                <span data-toggle-theme="dark" data-act-class="pl-4" className="border rounded-full border-green-700 flex items-center cursor-pointer w-10 transition-all duration-300 ease-in-out pl-0">
+                  <span className="rounded-full w-3 h-3 m-1 bg-green-700">
+                  </span>
+                </span>
+              </div> 
+            </div>
           </ul>
         </nav>
+        
         {withProfile && (
           <Profile
             name={settings.data.name}

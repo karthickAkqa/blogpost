@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+  --color-default: #fff;
+}
+[data-theme="dark"] a, [data-theme="dark"] h2, [data-theme="dark"] h1, [data-theme="dark"] div, [data-theme="dark"] h3, [data-theme="dark"] h4 {
+    color: #ffffff;
+}
+@media (prefers-color-scheme: dark){
+	:root{
+		--color-default: #252b30;
+	}
+}
+[data-theme='dark'] {
+  --color-default: #252b30;
+}
+[data-theme='black'] {
+  --color-default: #000000;
+}
+[data-theme='🌸'] {
+  --color-default: #ffabc8;
+}
+[data-theme='🐬'] {
+  --color-default: #7ec6ff;
+}
+[data-theme='🐤'] {
+  --color-default: #ffd65a;
+}
+body {
+	background-color: var(--color-default);
+}

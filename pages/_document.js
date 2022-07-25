@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
-
+import { Html, Head, Main, NextScript } from "next/document"; 
 export default function Document() {
   return (
     <Html>
@@ -14,7 +13,7 @@ export default function Document() {
         />
       </Head>
       <body className="overflow-x-hidden antialiased">
-        <Main />
+        <Main /> 
         <NextScript />
       </body>
     </Html>
