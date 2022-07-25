@@ -3,36 +3,32 @@
 @tailwind utilities;
 
 
-:root {
-  --color-default: #fff;
-}
-[data-theme="dark"] a, [data-theme="dark"] h2, [data-theme="dark"] h1, [data-theme="dark"] div, [data-theme="dark"] h3, [data-theme="dark"] h4 {
-    color: #ffffff;
-}
-@media (prefers-color-scheme: dark){
-	:root{
-		--color-default: #252b30;
-	}
-}
-[data-theme='dark'] {
-  --color-default: #252b30;
-}
-[data-theme='black'] {
-  --color-default: #000000;
-}
-[data-theme='🌸'] {
-  --color-default: #ffabc8;
-}
-[data-theme='🐬'] {
-  --color-default: #7ec6ff;
-}
-[data-theme='🐤'] {
-  --color-default: #ffd65a;
-}
-body {
-	background-color: var(--color-default);
+
+
+[data-theme=dark] a, [data-theme=dark] div, 
+[data-theme=dark] h1, [data-theme=dark] h2, 
+[data-theme=dark] h3, [data-theme=dark] h4, [
+  data-theme=dark] select {
+  color: #fff;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+[data-theme="dark"] select{
+    color: #ffffff;
+}
+[data-theme="dark"] .ais-SearchBox-input {
+
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+}
+[data-theme="dark"] .ais-Hits-item {
+    background: #2a303c;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+}
+[data-theme="dark"]  p {
+    color: #999;
+}
+[data-theme="dark"]  code {
+    color: #000;
+}
+[data-theme="dark"] .ais-SearchBox-submitIcon path{
+    color: #fff;
 }

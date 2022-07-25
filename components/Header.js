@@ -7,8 +7,6 @@ import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
 import {useEffect} from "react"
 import {themeChange} from "theme-change";
-import 'instantsearch.css/themes/satellite.css';
-
 
 const Profile = ({ name, description, profilePicture }) => {
   return (
@@ -88,23 +86,12 @@ export const Header = ({
                 </PrismicLink>
               </NavItem>
             ))}
-            {/* <select className="select select-bordered" data-choose-theme>
+            <select className="select select-bordered" data-choose-theme>
               <option value="" >Default</option>
               {themeValues.map((value) => (
                 <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
               ))}
-            </select> */}
-
-            <div className="m-5"> 
-            <span className="px-1.5">Light</span>  
-              <div className="inline-block w-10">
-                <span data-toggle-theme="dark" data-act-class="pl-4" className="border rounded-full border-neutral-600 flex items-center cursor-pointer w-10 transition-all duration-300 ease-in-out" >
-                  <span className="rounded-full w-3 h-3 m-1 bg-neutral-700"> 
-                  </span>
-                </span>
-              </div> 
-               <span className="px-1.5">Dark</span>
-            </div>
+            </select>
           </ul>
         </nav>
         
