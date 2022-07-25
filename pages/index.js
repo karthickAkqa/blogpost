@@ -7,6 +7,7 @@ import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
+import 'instantsearch.css/themes/satellite.css';
 
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
