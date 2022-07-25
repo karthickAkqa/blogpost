@@ -4,7 +4,7 @@ function SearchBox({ refine }) {
   return (
     <form action="" role="search">
       <input
-        id="articles"
+        id="algolia_search"
         type="search"
         placeholder="Search articles"
         onChange={(e) => refine(e.currentTarget.value)}

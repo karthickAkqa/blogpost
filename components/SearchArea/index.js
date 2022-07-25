@@ -31,7 +31,7 @@ function Hit({ hit }) {
       <div>
         <h1 className="font-serif text-2xl italic leading-normal tracking-tight primary-content pt-5 pb-5">
           <PrismicLink href={`/articles/${hit.slug}`}>
-              {hit.title}
+              {hit.articleTitle}
           </PrismicLink>
         </h1>
       </div>
@@ -42,7 +42,7 @@ export const Search = ({ }) => {
     return (
         <section className="pb-8">
         <div className="mx-auto w-full max-w-xl">      
-          <InstantSearch indexName="pilot_one" searchClient={searchClient }>
+          <InstantSearch indexName="articles" searchClient={searchClient }>
             <SearchBox
                 classNames={{
                   root: '',
