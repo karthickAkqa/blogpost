@@ -2,18 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+[data-theme="dark"]{
+  background: #2a303c;
+}
+select{ 
+  border:1px solid #2a303c;
+  border-radius: 5px;
+}
 
 [data-theme=dark] a, [data-theme=dark] div, 
 [data-theme=dark] h1, [data-theme=dark] h2, 
 [data-theme=dark] h3, [data-theme=dark] h4, [
   data-theme=dark] select {
   color: #fff;
+  background: transparent;
 }
 
 [data-theme="dark"] select{
     color: #ffffff;
+    background: #2a303c; 
+    border:1px solid #fff;
 }
 [data-theme="dark"] .ais-SearchBox-input {
 
