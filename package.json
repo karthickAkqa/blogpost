@@ -8,7 +8,7 @@
     "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "next:dev": "next",
     "build": "next build",
-    "postpublish": "node ./scripts/build-search.mjs",
+    "postbuild": "node ./scripts/build-search.mjs",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine",

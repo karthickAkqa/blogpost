@@ -11,7 +11,7 @@ function Hits({ searchState, searchResults }) {
       {searchResults?.hits.length > 0 && validQuery && (
         <ol>
           {searchResults.hits.map((hit) => (
-            <li key={hit.articleTitle}>{hit.articleTitle}</li>
+            <li key={hit.title}>{hit.title}</li>
           ))}
         </ol>
       )}

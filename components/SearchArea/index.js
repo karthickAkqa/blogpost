@@ -31,7 +31,7 @@ function Hit({ hit }) {
       <div>
         <h1 className="font-serif text-2xl italic leading-normal tracking-tight primary-content pt-5 pb-5">
           <PrismicLink href={`/articles/${hit.slug}`}>
-              {hit.articleTitle}
+              {hit.title}
           </PrismicLink>
         </h1>
       </div>
