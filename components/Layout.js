@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Search } from "./SearchArea";
+import { Search } from "./Search"
 
 export const Layout = ({
   navigation,
@@ -18,7 +18,7 @@ export const Layout = ({
         navigation={navigation}
         settings={settings}
       />
-      <Search/>
+      <Search/> 
       <main>{children}</main>
       <Footer withSignUpForm={withSignUpForm} settings={settings} />
     </div>
