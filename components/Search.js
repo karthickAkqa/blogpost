@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { PrismicLink} from "@prismicio/react";
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
@@ -30,7 +30,7 @@ const searchClient = {
 export const AlgoliaSearch = ({ }) => (
   <section className="pt-8">
     <div className="mx-auto w-full max-w-xl">      
-      <InstantSearch indexName="articles" searchClient={searchClient}>
+      <InstantSearch indexName="new_content" searchClient={searchClient}>
         <SearchBox
           classNames={{
             root: '',

@@ -71,7 +71,7 @@ function transformPostsToSearchObjects(posts) {
         );
 
         // initialize the index with your index name
-        const index = client.initIndex("articles");
+        const index = client.initIndex("new_content");
 
         // save the objects!
         const algoliaResponse = await index.saveObjects(transformed);
