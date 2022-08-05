@@ -3,10 +3,12 @@ import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
 
+import { AlgoliaSearch } from "../components/Search";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
+import {useDarkMode} from "../components/useDarkMode"; 
 import 'instantsearch.css/themes/satellite.css';
 
 
@@ -50,7 +52,8 @@ const Article = ({ article }) => {
   const excerpt = getExcerpt(article.data.slices);
 
   return (
-    <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
+    <li className="w-full sm:w-1/2 md:w-1/3 self-stretch  px-4">
+      <div className="rounded overflow-hidden ">
       <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
         <PrismicLink document={article} tabIndex="-1">
             {prismicH.isFilled.image(featuredImage) && (
@@ -62,21 +65,21 @@ const Article = ({ article }) => {
             )}
         </PrismicLink>
       </div>
-      <div className="grid grid-cols-1 gap-3 md:col-span-2">
-        <Heading as="h2">
+      <div className="grid grid-cols-1 gap-3 md:col-span-2 px-6 py-5 bg-white shadow-lg ">
+        <h2 className="font-semibold text-xl mb-2">
           <PrismicLink document={article}>
             <PrismicText field={article.data.title} />
           </PrismicLink> 
-        </Heading>
-        <p className="font-serif italic tracking-tighter text-slate-500">
+        </h2>
+        <p className="font-roboto italic tracking-tighter ">
           {dateFormatter.format(date)}
         </p>
         {excerpt && (
-          <p className="font-serif leading-relaxed md:text-lg md:leading-relaxed">
+          <p className="font-roboto text-base leading-relaxed  md:leading-relaxed">
             {excerpt}
           </p>
         )}
-      </div>
+      </div></div>
     </li>
   );
 };
@@ -94,12 +97,15 @@ const Index = ({ articles, navigation, settings }) => {
       </Head>
 
       <Bounded size="widest">
-        <ul className="grid grid-cols-1 gap-16">
+        
+        <AlgoliaSearch/> 
+        <ul className="flex flex-wrap -mx-4">
           {articles.map((article) => (
             <Article key={article.id} article={article} />
           ))}
         </ul>
       </Bounded>
+      
     </Layout>
   );
 };
@@ -126,3 +132,6 @@ export async function getStaticProps({ previewData }) {
     },
   };
 }
+ 
+
+ 

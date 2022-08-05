@@ -23,13 +23,10 @@ select{
     background: #2a303c; 
     border:1px solid #fff;
 }
-[data-theme="dark"] .ais-SearchBox-input {
-
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+[data-theme="dark"] .ais-SearchBox-input { 
 }
 [data-theme="dark"] .ais-Hits-item {
-    background: #2a303c;
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+    background: #2a303c; 
 }
 [data-theme="dark"]  p {
     color: #999;

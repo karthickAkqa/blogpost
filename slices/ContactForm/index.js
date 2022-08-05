@@ -23,7 +23,7 @@ const InputField = ({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 text-slate-800 placeholder-slate-400"
+        className="w-full appearance-none block w-full bg-gray-200 text-gray-700 border border-emerald-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
       />
     </Field>
   );
@@ -36,7 +36,7 @@ const TextareaField = ({ label, name, placeholder, required = true }) => {
         name={name}
         required={required}
         placeholder={placeholder}
-        className="h-40 w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 text-slate-800 placeholder-slate-400"
+        className="h-40 w-full  appearance-none block w-full bg-gray-200 text-gray-700 border border-emerald-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
       />
     </Field>
   );
@@ -64,7 +64,7 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="ml-auto inline-flex items-center gap-2"
+          className="ml-auto inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 border-b-4 border-emerald-700 hover:border-emerald-500 rounded"
         >
           Send message{" "}
           <span aria-hidden={true} className="text-xl">

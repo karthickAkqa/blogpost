@@ -27,7 +27,7 @@ const LatestArticle = ({ article }) => {
           <PrismicText field={article.data.title} />
         </PrismicLink>
       </h1>
-      <p className="font-serif italic tracking-tighter text-slate-500">
+      <p className="font-roboto italic tracking-tighter text-slate-500">
         {dateFormatter.format(date)}
       </p>
     </li>
@@ -50,26 +50,28 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
         <title>
           {prismicH.asText(article.data.title)} 
         </title>
-      </Head>
-      <Bounded>
-        <PrismicLink
-          href="/"
-          className="font-semibold tracking-tight text-slate-400"
-        >
-          &larr; Back to articles
-        </PrismicLink>
-      </Bounded>
-      <article>
-        <Bounded className="pb-0">
-          <h1 className="mb-3 text-3xl font-semibold tracking-tighter primary-content md:text-4xl">
-            <PrismicText field={article.data.title} />
-          </h1>
-          <p className="font-serif italic tracking-tighter text-slate-500">
-            {dateFormatter.format(date)}
-          </p>
-        </Bounded>
-        <SliceZone slices={article.data.slices} components={components} />
-      </article>
+      </Head> 
+        <div className="grid ">
+          <div className="container  mx-auto w-full max-w-6xl">
+            <PrismicLink
+              href="/"
+              className="font-semibold tracking-tight text-slate-400"
+            >
+              &larr; Back to articles
+            </PrismicLink>
+            <section className="px-4 md:px-6 lg:py-12 ">     
+                <h1 className="text-3xl font-semibold tracking-tighter primary-content md:text-4xl">
+                  <PrismicText field={article.data.title} />
+                </h1>
+                <p className="font-roboto italic tracking-tighter text-slate-500">
+                  {dateFormatter.format(date)}
+                </p>               
+            </section>
+            <article>
+              <SliceZone slices={article.data.slices} components={components} />
+            </article>
+          </div> 
+        </div>
       {latestArticles.length > 0 && (
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">

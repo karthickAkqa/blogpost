@@ -11,9 +11,42 @@ import {themeChange} from "theme-change";
 const Profile = ({ name, description, profilePicture }) => {
   return (
     <div className="px-4">
-      <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
-        <PrismicLink href="/" tabIndex="-1">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
+      <div className="relative flex flex-col max-w-3xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-900 dark:text-gray-100 divide-gray-700">
+        
+      <div className="flex items-center p-3 space-x-3">
+          <PrismicLink href="/" tabIndex="-1">
+            <div className="relative h-52 w-52 overflow-hidden  bg-slate-300">
+              {prismicH.isFilled.image(profilePicture) && (
+                <PrismicNextImage
+                  field={profilePicture} 
+                />
+              )}
+            </div>
+          </PrismicLink>
+        </div>
+        <div className="p-3 space-y-1 flex items-center">
+              {(prismicH.isFilled.richText(name) ||
+                prismicH.isFilled.richText(description)) && (
+                <div className="grid grid-cols-1 gap-2 text-left pl-4 pr-4  md:items-center">
+                  {prismicH.isFilled.richText(name) && (
+                    <Heading>
+                      <PrismicLink href="/">
+                        <PrismicText field={name} />
+                      </PrismicLink>
+                    </Heading>
+                  )}
+                  {prismicH.isFilled.richText(description) && (
+                    <p className="font-roboto text-xl italic leading-normal tracking-tight primary-content">
+                      <PrismicText field={description} />
+                    </p>
+                  )}
+                </div>
+              )}
+        </div> 
+      </div>
+      <div className="pb-0 border-b shadow-lg bg-gray-100 md:flex md:items-center md:justify-between">
+        {/* <PrismicLink href="/" tabIndex="-1">
+          <div className="relative h-52 w-52 overflow-hidden  bg-slate-300">
             {prismicH.isFilled.image(profilePicture) && (
               <PrismicNextImage
                 field={profilePicture}
@@ -22,10 +55,10 @@ const Profile = ({ name, description, profilePicture }) => {
               />
             )}
           </div>
-        </PrismicLink>
+        </PrismicLink> 
         {(prismicH.isFilled.richText(name) ||
           prismicH.isFilled.richText(description)) && (
-          <div className="grid grid-cols-1 gap-2 text-center">
+          <div className="grid grid-cols-1 gap-2 text-left pl-4 pr-4">
             {prismicH.isFilled.richText(name) && (
               <Heading>
                 <PrismicLink href="/">
@@ -34,20 +67,21 @@ const Profile = ({ name, description, profilePicture }) => {
               </Heading>
             )}
             {prismicH.isFilled.richText(description) && (
-              <p className="font-serif text-2xl italic leading-normal tracking-tight primary-content">
+              <p className="font-roboto text-2xl italic leading-normal tracking-tight primary-content">
                 <PrismicText field={description} />
               </p>
             )}
           </div>
-        )}
+        )}*/}
       </div>
     </div>
+    
   );
 };
 
 const NavItem = ({ children }) => {
   return (
-    <li className="font-semibold tracking-tight primary-content flex items-center">{children}</li>
+    <li className="font-semibold tracking-tight primary-content flex items-center text-zinc-50">{children}</li>
   );
 };
 
@@ -68,14 +102,15 @@ export const Header = ({
     themeChange(false)
   });
 
+  
 
   return (
     <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-20">
-        <nav>
+      <div className="grid grid-cols-1 justify-items-center gap-9">
+        <nav className="container px-4 mx-auto md:flex md:items-center  md:justify-between bg-emerald-500 px-6 py-4 shadow">
           <ul className="flex flex-wrap justify-center gap-10">
             <NavItem>
-              <PrismicLink href="/">
+              <PrismicLink  href="/">
                 <PrismicText field={navigation.data.homepageLabel} />
               </PrismicLink>
             </NavItem>
@@ -86,14 +121,15 @@ export const Header = ({
                 </PrismicLink>
               </NavItem>
             ))}
-            <select className="select select-bordered" data-choose-theme>
-              <option value="" >Default</option>
+          </ul> 
+            <select className="selectbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white " data-choose-theme>
+              <option value="" >System</option>
               {themeValues.map((value) => (
                 <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
               ))}
             </select>
-          </ul>
         </nav>
+            
         
         {withProfile && (
           <Profile

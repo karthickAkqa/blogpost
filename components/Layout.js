@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { AlgoliaSearch } from "./Search";
+// import { AlgoliaSearch } from "./Search";
 
 export const Layout = ({
   navigation,
@@ -11,16 +11,19 @@ export const Layout = ({
   children,
 }) => {
   return (
-    <div className="text-slate-700">
+    <div className="text-slate-700 bg-emerald-50">
       <Header
         withProfile={withProfile}
         withDivider={withHeaderDivider}
         navigation={navigation}
         settings={settings}
       />
-      <AlgoliaSearch/> 
+      
+      {/* <AlgoliaSearch/>  */}
       <main>{children}</main>
-      <Footer withSignUpForm={withSignUpForm} settings={settings} />
+      <div className="  bg-emerald-500 shadow">
+        <Footer withSignUpForm={withSignUpForm} settings={settings} />
+      </div>
     </div>
   );
 };

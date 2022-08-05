@@ -11,10 +11,10 @@ const SignUpForm = ({ settings }) => {
       <form
         action="/api/sign-up"
         method="post"
-        className="grid w-full max-w-xl grid-cols-1 gap-6"
+        className="grid w-full max-w-xl grid-cols-1 gap-6 "
       >
         {prismicH.isFilled.richText(settings.data.newsletterDisclaimer) && (
-          <div className="text-center font-serif tracking-tight text-slate-500">
+          <div className="text-center font-roboto tracking-tight text-slate-500">
             <PrismicRichText
               field={settings.data.newsletterDescription}
               components={{
@@ -24,7 +24,7 @@ const SignUpForm = ({ settings }) => {
                   </Heading>
                 ),
                 paragraph: ({ children }) => (
-                  <p className="mb-4 italic last:mb-0">{children}</p>
+                  <p className="mb-4 font-roboto italic text-white last:mb-0">{children}</p>
                 ),
               }}
             />
@@ -51,7 +51,7 @@ const SignUpForm = ({ settings }) => {
             </button>
           </div>
           {prismicH.isFilled.richText(settings.data.newsletterDisclaimer) && (
-            <p className="text-center text-xs tracking-tight text-slate-500">
+            <p className="text-center font-roboto text-white text-xs tracking-tight">
               <PrismicText field={settings.data.newsletterDisclaimer} />
             </p>
           )}
@@ -64,10 +64,10 @@ const SignUpForm = ({ settings }) => {
 export const Footer = ({ withSignUpForm = true, settings }) => {
   return (
     <Bounded as="footer">
-      <div className="grid grid-cols-1 justify-items-center gap-24">
+      <div className="grid grid-cols-1 justify-items-center gap-9">
         <HorizontalDivider />
         {withSignUpForm && <SignUpForm settings={settings} />}
-        <div className="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight text-slate-500">
+        <div className="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight text-white">
           Proudly published using{" "}
           <PrismicLink href="https://prismic.io" className="text-slate-700">
             Prismic
