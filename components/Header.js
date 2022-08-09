@@ -11,9 +11,9 @@ import {themeChange} from "theme-change";
 const Profile = ({ name, description, profilePicture }) => {
   return (
     <div className="px-4">
-      <div className="relative flex flex-col max-w-3xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-900 dark:text-gray-100 divide-gray-700">
+      <div className="relative flex flex-col max-w-3xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-900 dark:text-gray-100 divide-gray-700 ">
         
-      <div className="flex items-center p-3 space-x-3">
+      <div className="flex items-center  p-3 space-x-3 justify-center lg:justify-center">
           <PrismicLink href="/" tabIndex="-1">
             <div className="relative h-52 w-52 overflow-hidden  bg-slate-300">
               {prismicH.isFilled.image(profilePicture) && (
@@ -106,7 +106,7 @@ export const Header = ({
 
   return (
     <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-9">
+      <div className="grid grid-cols-1 justify-items-center gap-9 ">
         <nav className="container px-2.5 mx-auto md:flex md:items-center text-center  md:justify-between bg-emerald-500 px-6 py-4 shadow">
           <ul className="flex flex-wrap justify-center">
             <NavItem>
