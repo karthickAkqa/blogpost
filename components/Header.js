@@ -81,7 +81,7 @@ const Profile = ({ name, description, profilePicture }) => {
 
 const NavItem = ({ children }) => {
   return (
-    <li className="font-semibold tracking-tight primary-content flex items-center text-zinc-50">{children}</li>
+    <li className="font-semibold tracking-tight primary-content flex items-center text-zinc-50 px-2.5">{children}</li>
   );
 };
 
@@ -107,8 +107,8 @@ export const Header = ({
   return (
     <Bounded as="header">
       <div className="grid grid-cols-1 justify-items-center gap-9">
-        <nav className="container px-4 mx-auto md:flex md:items-center  md:justify-between bg-emerald-500 px-6 py-4 shadow">
-          <ul className="flex flex-wrap justify-center gap-10">
+        <nav className="container px-2.5 mx-auto md:flex md:items-center text-center  md:justify-between bg-emerald-500 px-6 py-4 shadow">
+          <ul className="flex flex-wrap justify-center">
             <NavItem>
               <PrismicLink  href="/">
                 <PrismicText field={navigation.data.homepageLabel} />
@@ -122,7 +122,7 @@ export const Header = ({
               </NavItem>
             ))}
           </ul> 
-            <select className="selectbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white " data-choose-theme>
+            <select className="inline-block selectbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  " data-choose-theme>
               <option value="" >System</option>
               {themeValues.map((value) => (
                 <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>

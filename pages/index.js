@@ -52,7 +52,7 @@ const Article = ({ article }) => {
   const excerpt = getExcerpt(article.data.slices);
 
   return (
-    <li className="w-full sm:w-1/2 md:w-1/3 self-stretch  px-4">
+    <li className="w-full sm:w-1/2 md:w-1/3 self-stretch  px-4 my-4">
       <div className="rounded overflow-hidden ">
       <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
         <PrismicLink document={article} tabIndex="-1">
